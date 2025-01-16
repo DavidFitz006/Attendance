@@ -87,8 +87,8 @@ if 'Attendance:' in df.columns and 'Operation or training:' in df.columns:
     operations_count['Total Attendance Percent'] = ((operations_count['Attendance Count'] / operation_count) * 100).round(0).astype(int)
 
     # Calculate average attendance for operations and trainings
-    avg_operations = data[data['Operation or training:'] == 'Operation']['Attendance Count'].mean()
-    avg_trainings = data[data['Operation or training:'] == 'Training']['Attendance Count'].mean()
+    avg_operations = df[df['Operation or training:'] == 'Operation']['Attendance Count'].mean()
+    avg_trainings = df[df['Operation or training:'] == 'Training']['Attendance Count'].mean()
     # Display average attendance statistics
     st.subheader("Average Attendance Statistics")
     st.write(f"**Average number of people attending operations:** {avg_operations:.2f}")
