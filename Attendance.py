@@ -88,14 +88,14 @@ if 'Attendance:' in df.columns and 'Operation or training:' in df.columns:
 
     # Calculate average attendance for operations and trainings
     # Process the attendance column: split names into lists
-    data['Attendance List'] = data['Attendance:'].apply(lambda x: str(x).split(',') if pd.notnull(x) else [])
+    df['Attendance List'] = df['Attendance:'].apply(lambda x: str(x).split(',') if pd.notnull(x) else [])
     
     # Count the number of attendees for each event
-    data['Attendance Count'] = data['Attendance List'].apply(len)
+    df['Attendance Count'] = df['Attendance List'].apply(len)
     
     # Calculate average attendance for operations and trainings
-    avg_operations = data[data['Operation or training:'] == 'Operation']['Attendance Count'].mean()
-    avg_trainings = data[data['Operation or training:'] == 'Training']['Attendance Count'].mean()
+    avg_operations = df[df['Operation or training:'] == 'Operation']['Attendance Count'].mean()
+    avg_trainings = df[df['Operation or training:'] == 'Training']['Attendance Count'].mean()
     # Display average attendance statistics
     st.subheader("Average Attendance Statistics")
     st.write(f"**Average number of people attending operations:** {avg_operations:.2f}")
