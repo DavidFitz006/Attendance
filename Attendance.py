@@ -98,8 +98,8 @@ if 'Attendance:' in df.columns and 'Operation or training:' in df.columns:
     avg_trainings = df[df['Operation or training:'] == 'Training']['Attendance Count'].mean()
     # Display average attendance statistics
     st.subheader("Average Attendance Statistics")
-    st.write(f"**Average number of people attending operations:** {avg_operations:.2f}")
-    st.write(f"**Average number of people attending trainings:** {avg_trainings:.2f}")
+#    st.write(f"**Average number of people attending operations:** {avg_operations:.2f}")
+#    st.write(f"**Average number of people attending trainings:** {avg_trainings:.2f}")
 
     # Display the Total Attendance Percent table
     st.subheader("Total Attendance Percentage")
